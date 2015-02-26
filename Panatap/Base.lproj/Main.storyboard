@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ttP-as-b0A">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -50,12 +52,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tT-Kb-KCH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2tT-Kb-KCH">
                                 <rect key="frame" x="0.0" y="64" width="320" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2tT-Kb-KCH" secondAttribute="height" multiplier="64:43" id="qcP-V3-3IP"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-13-UeJ">
-                                <rect key="frame" x="89" y="496" width="142" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-13-UeJ">
+                                <rect key="frame" x="89" y="481" width="142" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="41b-13-UeJ" secondAttribute="height" multiplier="71:19" id="HyS-d8-VlB"/>
+                                    <constraint firstAttribute="height" constant="38" id="bW1-NO-XsT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Preview">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,11 +74,17 @@
                                     <action selector="mergeAndPreview:" destination="ttP-as-b0A" eventType="touchUpInside" id="Q3w-d3-SID"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-9P-RxM">
-                                <rect key="frame" x="70" y="349" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-9P-RxM">
+                                <rect key="frame" x="70" y="334" width="90" height="90"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Humtap Music only">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="4s7-9k-5w3"/>
+                                    <constraint firstAttribute="height" constant="90" id="Wqs-Sy-jkK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-80" minY="0.0" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="25" maxY="40"/>
+                                <state key="normal" title="Humtap Music only" image="music">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -77,29 +92,56 @@
                                     <action selector="preserveAudio:" destination="ttP-as-b0A" eventType="touchUpInside" id="9YP-1n-cov"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYJ-iF-56w">
-                                <rect key="frame" x="161" y="349" width="90" height="90"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYJ-iF-56w">
+                                <rect key="frame" x="160" y="334" width="90" height="90"/>
                                 <color key="backgroundColor" red="0.93642378826530615" green="0.93642378826530615" blue="0.93642378826530615" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sound And Music">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="PKo-fS-KYa"/>
+                                    <constraint firstAttribute="height" constant="90" id="nQk-ic-3b0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-80" minY="0.0" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="25" maxY="40"/>
+                                <state key="normal" title="Sound And Music" image="music">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="preserveAudio:" destination="ttP-as-b0A" eventType="touchUpInside" id="UUp-KL-3Qt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlX-BZ-4cO">
-                                <rect key="frame" x="143" y="384" width="30" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlX-BZ-4cO">
+                                <rect key="frame" x="143" y="369" width="30" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="18K-Ay-hIn"/>
+                                    <constraint firstAttribute="width" constant="30" id="ckM-Ad-AtJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-ra-a1p">
-                                <rect key="frame" x="150" y="455" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-ra-a1p">
+                                <rect key="frame" x="150" y="440" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="41b-13-UeJ" secondAttribute="centerY" constant="-216" id="FZs-Pr-PmN"/>
+                            <constraint firstItem="rlX-BZ-4cO" firstAttribute="width" secondItem="8fT-RS-63Q" secondAttribute="height" multiplier="15:284" id="I3C-Tg-eCF"/>
+                            <constraint firstAttribute="centerX" secondItem="fYJ-iF-56w" secondAttribute="centerX" constant="-45" id="JA6-KN-uMZ"/>
+                            <constraint firstAttribute="centerX" secondItem="41b-13-UeJ" secondAttribute="centerX" id="JaX-Zx-Upq"/>
+                            <constraint firstItem="2tT-Kb-KCH" firstAttribute="leading" secondItem="8fT-RS-63Q" secondAttribute="leadingMargin" constant="-16" id="KFA-IR-Fg4"/>
+                            <constraint firstAttribute="centerY" secondItem="fYJ-iF-56w" secondAttribute="centerY" constant="-95" id="Mo0-CU-5ZX"/>
+                            <constraint firstAttribute="centerX" secondItem="vIQ-ra-a1p" secondAttribute="centerX" id="RpN-EX-i12"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2tT-Kb-KCH" secondAttribute="trailing" constant="-16" id="cQ5-lI-VyT"/>
+                            <constraint firstAttribute="centerY" secondItem="vIQ-ra-a1p" secondAttribute="centerY" constant="-166" id="cdl-3c-dLf"/>
+                            <constraint firstAttribute="centerX" secondItem="rlX-BZ-4cO" secondAttribute="centerX" constant="2" id="gBG-PF-o8j"/>
+                            <constraint firstAttribute="centerY" secondItem="rlX-BZ-4cO" secondAttribute="centerY" constant="-95" id="i69-ST-nqe"/>
+                            <constraint firstAttribute="centerX" secondItem="Mnf-9P-RxM" secondAttribute="centerX" constant="45" id="iR4-ag-a3B"/>
+                            <constraint firstItem="2tT-Kb-KCH" firstAttribute="top" secondItem="B7m-ea-GiR" secondAttribute="bottom" id="wLW-8o-5PD"/>
+                            <constraint firstAttribute="centerY" secondItem="Mnf-9P-RxM" secondAttribute="centerY" constant="-95" id="ymx-eU-UZP"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -108,12 +150,13 @@
                         <outlet property="btnHumTapOnly" destination="Mnf-9P-RxM" id="vun-Kq-pv3"/>
                         <outlet property="btnPreview" destination="41b-13-UeJ" id="dK5-t3-j7Q"/>
                         <outlet property="btnSoundMusic" destination="fYJ-iF-56w" id="uOl-kx-xdj"/>
+                        <outlet property="lblOR" destination="rlX-BZ-4cO" id="p6l-7l-wBi"/>
                         <outlet property="thumbImg" destination="2tT-Kb-KCH" id="gYE-ie-T20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFX-b3-ig2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="139"/>
+            <point key="canvasLocation" x="1161" y="154"/>
         </scene>
         <!--View Controller1-->
         <scene sceneID="JCA-XU-T6f">
@@ -165,4 +208,8 @@
             <point key="canvasLocation" x="27" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="music" width="85" height="85"/>
+        <image name="placeholder" width="207" height="138"/>
+    </resources>
 </document>

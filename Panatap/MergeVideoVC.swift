@@ -25,6 +25,7 @@ class MergeVideoVC: UIViewController {
 
     @IBOutlet weak var btnHumTapOnly: UIButton!
     @IBOutlet weak var btnSoundMusic: UIButton!
+    @IBOutlet weak var lblOR: UILabel!
     
     @IBOutlet weak var btnPreview: UIButton!
     @IBOutlet weak var activityView: UIActivityIndicatorView!
@@ -38,15 +39,50 @@ class MergeVideoVC: UIViewController {
         
         self.btnHumTapOnly.titleLabel?.numberOfLines = 2
         self.btnHumTapOnly.titleLabel?.textAlignment = NSTextAlignment.Center
-        self.btnHumTapOnly.titleLabel?.font = UIFont.systemFontOfSize(14.0)
+        self.btnHumTapOnly.titleLabel?.font = UIFont.systemFontOfSize(12.0)
+        self.btnHumTapOnly.setImage(UIImage(named: "music").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+        self.btnHumTapOnly.tintColor = UIColor.whiteColor()
+        self.btnHumTapOnly.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3).CGColor
+        self.btnHumTapOnly.layer.borderWidth = 1.0
+        self.btnHumTapOnly.layer.cornerRadius = 2.0
+        
+        
+        // set image and title inset
+        let width = self.btnHumTapOnly.frame.size.width
+        self.btnHumTapOnly.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(width/1.125), width/18.0, width/9.0)
+        self.btnHumTapOnly.imageEdgeInsets = UIEdgeInsetsMake(width/9.0,width/3.6 , width/2.25, width/3.6 )
+
         
         
         self.btnSoundMusic.titleLabel?.numberOfLines = 2
         self.btnSoundMusic.titleLabel?.textAlignment = NSTextAlignment.Center
-        self.btnSoundMusic.titleLabel?.font = UIFont.systemFontOfSize(14.0)
-
+        self.btnSoundMusic.titleLabel?.font = UIFont.systemFontOfSize(12.0)
+        self.btnSoundMusic.setImage(UIImage(named: "music").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+        self.btnSoundMusic.tintColor = HTBlueColor
+        self.btnSoundMusic.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3).CGColor
+        self.btnSoundMusic.layer.borderWidth = 1.0
+        self.btnSoundMusic.layer.cornerRadius = 2.0
+        
+        // set image and title inset
+        self.btnSoundMusic.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(width/1.125), width/18.0, width/9.0)
+        self.btnSoundMusic.imageEdgeInsets = UIEdgeInsetsMake(width/9.0,width/3.6 , width/2.25, width/3.6 )
+        
+        
+        
+        self.lblOR.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3).CGColor
+        self.lblOR.layer.borderWidth = 1.0
+        self.lblOR.layer.cornerRadius = 2.0
+        self.lblOR.layer.masksToBounds = true
+        
+        
+        self.btnPreview.layer.cornerRadius = 4.0
+        
         
         self.activityView.stopAnimating()
+        
+        
+        
+        
         
         if Visualization.getDuratonInSec(self.videoUrl) > 24.0 {
             showVideoDurationAlert("Your selected video's length is grater then 24sec it will trim upto 24sec automatically", okCallBack: { () -> Void in
@@ -54,13 +90,13 @@ class MergeVideoVC: UIViewController {
             })
         }
         
-        self.humtapUrl = NSBundle.mainBundle().URLForResource("humtap", withExtension: ".mp3")
         
+        
+        
+        self.humtapUrl = NSBundle.mainBundle().URLForResource("humtap", withExtension: ".mp3")
         
         // set thumb img of video
         self.thumbImg.image = Visualization.getThumbnailOfVide(self.videoUrl)
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,20 +187,25 @@ class MergeVideoVC: UIViewController {
             self.preserveAudio = false
             
             self.btnHumTapOnly.backgroundColor = HTBlueColor
+            self.btnHumTapOnly.tintColor = UIColor.whiteColor()
             self.btnHumTapOnly.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
 
             self.btnSoundMusic.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            self.btnSoundMusic.tintColor = HTBlueColor
             self.btnSoundMusic.setTitleColor(HTBlueColor, forState: UIControlState.Normal)
+            
         }
     // Sound And Music
         else if sender.tag == 1 {
             self.preserveAudio = true
             
             self.btnSoundMusic.backgroundColor = HTBlueColor
+            self.btnSoundMusic.tintColor = UIColor.whiteColor()
             self.btnSoundMusic.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             
             
             self.btnHumTapOnly.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            self.btnHumTapOnly.tintColor = HTBlueColor
             self.btnHumTapOnly.setTitleColor(HTBlueColor, forState: UIControlState.Normal)
             
         }
