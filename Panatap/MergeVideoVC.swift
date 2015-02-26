@@ -26,6 +26,7 @@ class MergeVideoVC: UIViewController {
     @IBOutlet weak var btnHumTapOnly: UIButton!
     @IBOutlet weak var btnSoundMusic: UIButton!
     
+    
     @IBOutlet weak var btnPreview: UIButton!
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
@@ -39,6 +40,16 @@ class MergeVideoVC: UIViewController {
         self.btnHumTapOnly.titleLabel?.numberOfLines = 2
         self.btnHumTapOnly.titleLabel?.textAlignment = NSTextAlignment.Center
         self.btnHumTapOnly.titleLabel?.font = UIFont.systemFontOfSize(14.0)
+        
+        let image = UIImage(named: "music").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        image.drawInRect( CGRect(x: 0.0, y: 0.0, width: 50, height: 50))
+        
+        self.btnHumTapOnly.setImage(image, forState: UIControlState.Normal)
+        
+        self.btnHumTapOnly.tintColor = UIColor.whiteColor()
+        
+        
+//        self.btnHumTapOnly.imageView?.frame = CGRect(x: 0.0, y: 0.0, width: 50, height: 50)
         
         
         self.btnSoundMusic.titleLabel?.numberOfLines = 2
@@ -169,5 +180,13 @@ class MergeVideoVC: UIViewController {
             
         }
     }
+
+
+}
+
+
+class HTPreserveAudioView : UIView {
+    
+        @IBOutlet weak var thumbImg: UIImageView!
     
 }

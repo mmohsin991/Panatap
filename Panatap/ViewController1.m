@@ -7,7 +7,7 @@
 //
 
 #import "ViewController1.h"
-#import "Panatap-Swift.h"
+//#import "Panatap-Swift.h"
 
 
 @interface ViewController1 ()
