@@ -50,7 +50,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2tT-Kb-KCH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tT-Kb-KCH">
                                 <rect key="frame" x="0.0" y="64" width="320" height="215"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41b-13-UeJ">
@@ -65,11 +65,22 @@
                                     <action selector="mergeAndPreview:" destination="ttP-as-b0A" eventType="touchUpInside" id="Q3w-d3-SID"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-9P-RxM">
+                                <rect key="frame" x="70" y="349" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Humtap Music only">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="preserveAudio:" destination="ttP-as-b0A" eventType="touchUpInside" id="9YP-1n-cov"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYJ-iF-56w">
                                 <rect key="frame" x="161" y="349" width="90" height="90"/>
                                 <color key="backgroundColor" red="0.93642378826530615" green="0.93642378826530615" blue="0.93642378826530615" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Sound And Music">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -87,15 +98,6 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vIQ-ra-a1p">
                                 <rect key="frame" x="150" y="455" width="20" height="20"/>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5f-AE-Rru" customClass="HTPreserveAudioView" customModule="Panatap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="252" width="160" height="284"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-aQ-4ch">
-                                        <rect key="frame" x="0.0" y="13" width="160" height="284"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -103,6 +105,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activityView" destination="vIQ-ra-a1p" id="3gG-2A-Rd2"/>
+                        <outlet property="btnHumTapOnly" destination="Mnf-9P-RxM" id="vun-Kq-pv3"/>
                         <outlet property="btnPreview" destination="41b-13-UeJ" id="dK5-t3-j7Q"/>
                         <outlet property="btnSoundMusic" destination="fYJ-iF-56w" id="uOl-kx-xdj"/>
                         <outlet property="thumbImg" destination="2tT-Kb-KCH" id="gYE-ie-T20"/>
@@ -162,7 +165,4 @@
             <point key="canvasLocation" x="27" y="139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="placeholder" width="207" height="138"/>
-    </resources>
 </document>

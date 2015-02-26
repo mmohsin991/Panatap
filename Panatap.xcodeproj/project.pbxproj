@@ -17,7 +17,6 @@
 		4229E81C1A9F2AE7000751C7 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4229E81B1A9F2AE7000751C7 /* ViewController1.m */; };
 		42D02F7A1A9F484800AB6C01 /* humtap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42D02F791A9F484800AB6C01 /* humtap.mp3 */; };
 		42D02F7C1A9F504200AB6C01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D02F7B1A9F504200AB6C01 /* Constants.swift */; };
-		42DFAB711A9F77AF0074AFC7 /* HTPreserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFAB701A9F77AF0074AFC7 /* HTPreserveView.swift */; };
 		42F799891A9F32FB007514DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F799881A9F32FB007514DC /* AVFoundation.framework */; };
 		42F7998B1A9F333C007514DC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F7998A1A9F333C007514DC /* MobileCoreServices.framework */; };
 		42F7998D1A9F33E1007514DC /* MergeVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F7998C1A9F33E1007514DC /* MergeVideoVC.swift */; };
@@ -51,7 +50,6 @@
 		4229E81B1A9F2AE7000751C7 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
 		42D02F791A9F484800AB6C01 /* humtap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humtap.mp3; sourceTree = "<group>"; };
 		42D02F7B1A9F504200AB6C01 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		42DFAB701A9F77AF0074AFC7 /* HTPreserveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTPreserveView.swift; sourceTree = "<group>"; };
 		42F799881A9F32FB007514DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42F7998A1A9F333C007514DC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		42F7998C1A9F33E1007514DC /* MergeVideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeVideoVC.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				4229E7F61A9F2A77000751C7 /* AppDelegate.swift */,
 				4229E7FB1A9F2A77000751C7 /* ViewController.swift */,
 				42F7998C1A9F33E1007514DC /* MergeVideoVC.swift */,
-				42DFAB701A9F77AF0074AFC7 /* HTPreserveView.swift */,
 				4229E81A1A9F2AE7000751C7 /* ViewController1.h */,
 				4229E81B1A9F2AE7000751C7 /* ViewController1.m */,
 				4229E7FD1A9F2A77000751C7 /* Main.storyboard */,
@@ -248,7 +245,6 @@
 			files = (
 				4229E81C1A9F2AE7000751C7 /* ViewController1.m in Sources */,
 				4229E7FC1A9F2A77000751C7 /* ViewController.swift in Sources */,
-				42DFAB711A9F77AF0074AFC7 /* HTPreserveView.swift in Sources */,
 				4229E7F71A9F2A77000751C7 /* AppDelegate.swift in Sources */,
 				42F7998D1A9F33E1007514DC /* MergeVideoVC.swift in Sources */,
 				42D02F7C1A9F504200AB6C01 /* Constants.swift in Sources */,
