@@ -91,8 +91,9 @@ class MergeVideoVC: UIViewController {
         
         
         
-        self.humtapUrl = NSBundle.mainBundle().URLForResource("humtap", withExtension: ".mp3")
         
+        //self.humtapUrl = NSBundle.mainBundle().URLForResource("humtap", withExtension: ".mp3")
+        self.humtapUrl = NSURL(string: "http://humtap.s3.amazonaws.com/humtaps/humtap-e820bead6ab0d01ba2a935790942cd04.mp3")
         // set thumb img of video
         self.thumbImg.image = Visualization.getThumbnailOfVide(self.videoUrl)
     }
@@ -207,6 +208,25 @@ class MergeVideoVC: UIViewController {
             self.btnHumTapOnly.setTitleColor(HTBlueColor, forState: UIControlState.Normal)
             
         }
+    }
+    
+    
+    @IBAction func shareAction(sender: AnyObject) {
+        let textToShare = UIImage(named: "Add")
+      //  let obj = ["Action",textToShare]
+        let myWebsite = NSURL(string: "http://www.google.com/")
+        
+        let myMusic = NSURL(string: "http://www.dailymotion.com/video/x28jmhr_michael-gregorio-you-are-so-beautiful-joe-cocker-en-live-dans-le-grand-studio-rtl_music")
+        let image = self.thumbImg.image!
+        let message = "Humtap video share: "
+        
+        let shareContent = [message, myWebsite, image]
+
+        let activity = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
+        /*activity.view.backgroundColor = UIColor.lightGrayColor()
+        activity.view.layer.cornerRadius = 6*/
+        activity.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypePostToWeibo,UIActivityTypeMail,UIActivityTypeAddToReadingList,UIActivityTypePostToFlickr,UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypeAirDrop,UIActivityTypePostToTwitter, UIActivityTypeMessage]
+        self.presentViewController(activity, animated: true, completion: nil)
     }
     
 }
