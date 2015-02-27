@@ -34,7 +34,7 @@ class MergeVideoVC: UIViewController {
         super.viewDidLoad()
         
         // temp remove it
-        videoUrl = NSURL(string: "dsa")
+        //videoUrl = NSURL(string: "dsa")
 
         
         self.btnHumTapOnly.titleLabel?.numberOfLines = 2
@@ -69,7 +69,7 @@ class MergeVideoVC: UIViewController {
         
         
         
-        self.lblOR.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3).CGColor
+        self.lblOR.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5).CGColor
         self.lblOR.layer.borderWidth = 1.0
         self.lblOR.layer.cornerRadius = 2.0
         self.lblOR.layer.masksToBounds = true
@@ -79,8 +79,6 @@ class MergeVideoVC: UIViewController {
         
         
         self.activityView.stopAnimating()
-        
-        
         
         
         

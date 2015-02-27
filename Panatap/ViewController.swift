@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBAction func click(sender: AnyObject) {
         let alert = UIAlertController(title: "Select Image Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
-        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+        let camera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
                 
                 self.videoPicker.allowsEditing = true
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
         
         
-        alert.addAction(cameraAction)
+        alert.addAction(camera)
         alert.addAction(video)
         alert.addAction(cameraRoll)
         alert.addAction(facebook)
@@ -102,6 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             // if Media is an image
             println("image selected")
             var chosenImage = info[UIImagePickerControllerOriginalImage] as UIImage
+            
             dismissViewControllerAnimated(true, completion: nil)
         }
             
