@@ -57,7 +57,7 @@ class MergeVideoVC: UIViewController {
         self.btnSoundMusic.titleLabel?.numberOfLines = 2
         self.btnSoundMusic.titleLabel?.textAlignment = NSTextAlignment.Center
         self.btnSoundMusic.titleLabel?.font = UIFont.systemFontOfSize(12.0)
-        self.btnSoundMusic.setImage(UIImage(named: "music").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+        self.btnSoundMusic.setImage(UIImage(named: "HumtapMusicIcon").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         self.btnSoundMusic.tintColor = HTBlueColor
         self.btnSoundMusic.layer.borderColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.3).CGColor
         self.btnSoundMusic.layer.borderWidth = 1.0
@@ -65,7 +65,7 @@ class MergeVideoVC: UIViewController {
         
         // set image and title inset
         self.btnSoundMusic.titleEdgeInsets = UIEdgeInsetsMake(0.0, -(width/1.125), width/18.0, width/9.0)
-        self.btnSoundMusic.imageEdgeInsets = UIEdgeInsetsMake(width/9.0,width/3.6 , width/2.25, width/3.6 )
+        self.btnSoundMusic.imageEdgeInsets = UIEdgeInsetsMake(width/9.0,width/9.0 , width/2.25, width/9.0)
         
         
         

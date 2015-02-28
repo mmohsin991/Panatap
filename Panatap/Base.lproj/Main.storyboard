@@ -101,8 +101,8 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="-80" minY="0.0" maxX="10" maxY="5"/>
-                                <inset key="imageEdgeInsets" minX="25" minY="10" maxX="25" maxY="40"/>
-                                <state key="normal" title="Sound And Music" image="music">
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="40"/>
+                                <state key="normal" title="Sound And Music" image="HumtapMusicIcon">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -243,6 +243,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HumtapMusicIcon" width="85" height="44"/>
         <image name="music" width="85" height="85"/>
         <image name="placeholder" width="207" height="138"/>
     </resources>
