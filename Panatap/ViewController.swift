@@ -9,13 +9,16 @@
 import UIKit
 import MobileCoreServices
 import AVKit
+import CoreMedia
+
+//import PUUIImageViewController
 
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     
     
-    let videoPicker = UIImagePickerController()
+    let videoPicker = MyImgPicVC()
 
     
 
@@ -31,6 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        videoPicker.viewControllers.count
     }
     
     
@@ -57,13 +62,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
         
         
-        let video = UIAlertAction(title: "Videos", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+        let video = UIAlertAction(title: "Videos and images", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
          
             // show the alert for the video duration
             self.videoPicker.allowsEditing = true
             self.videoPicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
             //videoPicker.modalPresentationStyle = UIModalPresentationStyle.FullScreen
-            self.videoPicker.mediaTypes = [kUTTypeMovie as NSString]
+            self.videoPicker.mediaTypes = [kUTTypeMovie as NSString , kUTTypeImage as NSString]
             self.presentViewController(self.videoPicker, animated: true, completion: nil)
         }
         
@@ -127,4 +132,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
 
 }
+
+
+
+class MyImgPicVC: UIImagePickerController {
+    
+    var Delegate: UIImagePickerControllerDelegate!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println(viewControllers.count)
+        println(viewControllers[0])
+    }
+    
+    override func pushViewController(viewController: UIViewController, animated: Bool) {
+        
+        super.pushViewController(viewController, animated: animated)
+        
+        println(viewController)
+        
+        //self.allowsEditing = false
+        
+    }
+    
+    
+    
+
+}
+
+
 
