@@ -15,6 +15,7 @@
 		4229E8041A9F2A77000751C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4229E8021A9F2A77000751C7 /* LaunchScreen.xib */; };
 		4229E8101A9F2A77000751C7 /* PanatapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229E80F1A9F2A77000751C7 /* PanatapTests.swift */; };
 		4229E81C1A9F2AE7000751C7 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4229E81B1A9F2AE7000751C7 /* ViewController1.m */; };
+		425741941AA8901E00D0FF09 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425741931AA8901E00D0FF09 /* PhotosUI.framework */; };
 		42D02F7A1A9F484800AB6C01 /* humtap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42D02F791A9F484800AB6C01 /* humtap.mp3 */; };
 		42D02F7C1A9F504200AB6C01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D02F7B1A9F504200AB6C01 /* Constants.swift */; };
 		42F799891A9F32FB007514DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F799881A9F32FB007514DC /* AVFoundation.framework */; };
@@ -48,6 +49,7 @@
 		4229E8191A9F2AE6000751C7 /* Panatap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Panatap-Bridging-Header.h"; sourceTree = "<group>"; };
 		4229E81A1A9F2AE7000751C7 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
 		4229E81B1A9F2AE7000751C7 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		425741931AA8901E00D0FF09 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		42D02F791A9F484800AB6C01 /* humtap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humtap.mp3; sourceTree = "<group>"; };
 		42D02F7B1A9F504200AB6C01 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42F799881A9F32FB007514DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425741941AA8901E00D0FF09 /* PhotosUI.framework in Frameworks */,
 				42F7998B1A9F333C007514DC /* MobileCoreServices.framework in Frameworks */,
 				42F799891A9F32FB007514DC /* AVFoundation.framework in Frameworks */,
 			);
@@ -79,6 +82,7 @@
 		4229E7E81A9F2A77000751C7 = {
 			isa = PBXGroup;
 			children = (
+				425741931AA8901E00D0FF09 /* PhotosUI.framework */,
 				42F7998A1A9F333C007514DC /* MobileCoreServices.framework */,
 				42F799881A9F32FB007514DC /* AVFoundation.framework */,
 				4229E7F31A9F2A77000751C7 /* Panatap */,

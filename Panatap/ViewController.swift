@@ -14,12 +14,13 @@ import CoreMedia
 //import PUUIImageViewController
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    
-    
-    
-    let videoPicker = MyImgPicVC()
 
+
+class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
+    
+    
+    
+    let videoPicker = UIImagePickerController()
     
 
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         
         
         videoPicker.delegate = self
+        
 
     }
 
@@ -45,9 +47,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
 
     @IBAction func click(sender: AnyObject) {
         let alert = UIAlertController(title: "Select Image Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        //let alert = HTUIAlertController(title: "Select Image Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        //alert.parent = self
+        
+        
+        //alert.parent = self
+        
         
         let camera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                
+                
+            
+                
+                
+                
                 
                 self.videoPicker.allowsEditing = true
                 self.videoPicker.sourceType = UIImagePickerControllerSourceType.Camera
@@ -69,6 +83,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             self.videoPicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
             //videoPicker.modalPresentationStyle = UIModalPresentationStyle.FullScreen
             self.videoPicker.mediaTypes = [kUTTypeMovie as NSString , kUTTypeImage as NSString]
+            //self.videoPicker.mediaTypes = [kUTTypeImage as NSString]
+
             self.presentViewController(self.videoPicker, animated: true, completion: nil)
         }
         
@@ -82,17 +98,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         let facebook  = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
             
         }
+        let cancel  = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (UIAlertAction) -> Void in
+            
+        }
         
-        
+
         alert.addAction(camera)
         alert.addAction(video)
         alert.addAction(cameraRoll)
         alert.addAction(facebook)
+        alert.addAction(cancel)
+
         
+//        UIControl *aControl = (UIControl *) sender;
+//        CGRect frameInView = [aControl convertRect:aControl.bounds toView:self.view];
+//        alertController.popoverPresentationController.sourceRect = frameInView;
+//        alertController.popoverPresentationController.sourceView = self.view;
+//        alertController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+
+        
+        var control  = UIControl(frame: self.view.bounds)
+//
+//        alert.popoverPresentationController?.sourceRect = self.view.bounds
+//        alert.popoverPresentationController?.sourceView = self.view
+//        alert.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+
+//        
+//        alert.modalPresentationStyle = UIModalPresentationStyle.PageSheet
+//        alert.preferredContentSize = CGSizeMake(260, 340)
+//        
+//        let popoverMenuViewController = alert.popoverPresentationController
+//        popoverMenuViewController?.permittedArrowDirections = UIPopoverArrowDirection.allZeros
+//        popoverMenuViewController?.delegate = self
+//        popoverMenuViewController?.sourceView = self.view
+//        
+//        popoverMenuViewController?.sourceRect = CGRect(x: 200, y: 200, width: 300, height: 300)
         
         presentViewController(alert, animated: true, completion: nil)
         
         
+    }
+    
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
     }
     
     
@@ -159,6 +208,41 @@ class MyImgPicVC: UIImagePickerController {
     
 
 }
+class HTUIAlertController: UIAlertController {
+    
+    var tapGesture = UITapGestureRecognizer()
+    
+    var parent: UIViewController!
+    
+
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        if parent != nil {
+            parent.view.addGestureRecognizer(tapGesture)
+            parent.view.userInteractionEnabled = true
+
+        }
+        
+        //self.view.userInteractionEnabled = true
+       // self.view.addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(parent, action: "dismissVC")
+        println(parent)
+        //tapGesture.addTarget(parent, action: "dismissVC")
+    }
+    
+    func dismissVC(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+}
 
 
-
+protocol MyPro {
+    
+    
+    func myView(view: UIView)
+    
+}
